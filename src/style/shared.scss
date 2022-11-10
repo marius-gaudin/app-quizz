@@ -1,0 +1,29 @@
+
+// COULEUR
+$background-color: #233748;
+$font-color: #CFDBE4;
+$primary-color: #F6B12D;
+$secondary-color: #335F8A;
+$green-color: #3DA567;
+$red-color: #F6452D;
+
+// FONTS
+@font-face {
+    font-family: 'Ubuntu-Light';
+    src: url('./fonts/Ubuntu-Light.ttf');
+}
+
+@font-face {
+   font-family: 'Nunito-Medium';
+   src: url('./fonts/Nunito-Medium.ttf');
+}
+
+@font-face {
+   font-family: 'Nunito-Bold';
+   src: url('./fonts/Nunito-Bold.ttf');
+}
+
+h1, h2, p {
+   font-family: 'Ubuntu-Light';
+   color: $font-color;
+}

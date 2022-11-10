@@ -1,0 +1,107 @@
+
+@import 'shared.scss';
+
+#close {
+    color: $red-color;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    margin: 0;
+    background-color: $background-color;
+
+    .App {
+        max-width: 450px;
+        padding: 20px;
+        h1 {
+            margin: 3rem 0;
+            text-align: center;
+            animation: 2s linear 0s infinite alternate animTitle;
+            font-size: 1.5rem;
+            span {
+                color: $primary-color;
+            }
+        }
+
+        @keyframes animTitle {
+            from {
+               transform: rotate(5deg);
+            }
+            to {
+                transform: rotate(-5deg);
+            }
+        }
+
+        .cardQuizz {
+            display: block;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            border-radius: 27px;
+            border: solid $secondary-color 3px;
+            overflow: hidden;
+
+            .cadreImage {
+                overflow: hidden;
+                height: 13rem;
+                img{
+                    width: 100%;
+                }
+            }
+
+            h2 {
+                text-align: center;
+                font-size: 1rem;
+                margin: .5rem;
+            }
+        }
+
+        .answer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: solid $secondary-color 3px;
+            border-radius: 18px;
+            margin-bottom: 1.5rem;
+            p {
+                margin: .6rem;
+                font-size: 1.2rem;
+            }
+
+            .selector {
+                width: 25px;
+                height: 25px;
+                border: solid $secondary-color 3px;
+                border-radius: 50%;
+                margin-right: .6rem;
+            }
+
+            .check, .close {
+                width: 32px;
+                height: 32px;
+                margin-right: .6rem;
+            }
+
+            .check {
+                color: $green-color;
+            }
+
+            .close {
+                color: $red-color;
+            }
+        }
+
+        .good {
+            border: solid $green-color 3px;
+        }
+
+        .notGood {
+            border: solid $red-color 3px;
+        }
+
+    }
+
+}
+
