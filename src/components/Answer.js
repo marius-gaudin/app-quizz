@@ -13,9 +13,9 @@ export default function Answer({answer, state, correction}) {
             return 'answer good';
         } else if (state.isSelected){
             return 'answer notGood';
+        } else {
+            return 'answer disapear';
         }
-
-        return 'answer';
     }
 
     const getSelector = () => {

@@ -9,7 +9,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
     margin: 0;
     background-color: $background-color;
 
@@ -58,48 +57,80 @@ body {
             }
         }
 
-        .answer {
+        .info {
+            animation-name: appear;
+            animation-duration: .5s;
+        }
+
+        @keyframes appear {
+            from {
+               opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .choices {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border: solid $secondary-color 3px;
-            border-radius: 18px;
-            margin-bottom: 1.5rem;
-            p {
-                margin: .6rem;
-                font-size: 1.2rem;
-            }
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 300px;
 
-            .selector {
-                width: 25px;
-                height: 25px;
+            .answer {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
                 border: solid $secondary-color 3px;
-                border-radius: 50%;
-                margin-right: .6rem;
-            }
+                border-radius: 18px;
+                margin-bottom: 1.5rem;
+                transition: color .3s, margin .4s, height .4s, opacity .4s;
+                height: 43px;
 
-            .check, .close {
-                width: 32px;
-                height: 32px;
-                margin-right: .6rem;
+                &.disapear {
+                    margin: 0;
+                    border-width: 0;
+                    height: 0;
+                    opacity: 0;
+                }
+    
+                p {
+                    margin: .6rem;
+                    font-size: 1.2rem;
+                }
+    
+                .selector {
+                    width: 25px;
+                    height: 25px;
+                    border: solid $secondary-color 3px;
+                    border-radius: 50%;
+                    margin-right: .6rem;
+                }
+    
+                .check, .close {
+                    width: 32px;
+                    height: 32px;
+                    margin-right: .6rem;
+                }
+    
+                .check {
+                    color: $green-color;
+                }
+    
+                .close {
+                    color: $red-color;
+                }
             }
-
-            .check {
-                color: $green-color;
+    
+            .good {
+                border: solid $green-color 3px;
             }
-
-            .close {
-                color: $red-color;
+    
+            .notGood {
+                border: solid $red-color 3px;
             }
         }
-
-        .good {
-            border: solid $green-color 3px;
-        }
-
-        .notGood {
-            border: solid $red-color 3px;
-        }
+        
 
     }
 

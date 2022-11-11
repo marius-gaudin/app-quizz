@@ -34,6 +34,19 @@ export default function Quizz({quizzs}) {
         setNumQuestion(numQuestion+1);
     }
 
+    const getInfo = () => {
+        if(selected) {
+            return (
+                <div className="info">
+                    <p>{quizz.quizz[numQuestion-1].anecdote}</p>
+                </div>
+            )
+        } else {
+            return null;
+        }
+
+    }
+
     if(numQuestion > nbQuestions) {
         return (
             <div className="score">
@@ -49,8 +62,15 @@ export default function Quizz({quizzs}) {
             <p>Question {numQuestion}/{nbQuestions}</p>
             <h2>{quizz.quizz[numQuestion-1].question}</h2>
             {
-                quizz.quizz[numQuestion-1].propositions.map(proposition => <Answer key={proposition} answer={proposition} state={getState(proposition)} correction={correction} />)
+                 getInfo()
             }
+           
+            <div className="choices">
+                {
+                    quizz.quizz[numQuestion-1].propositions.map((proposition, index) => <Answer position={index} key={proposition} answer={proposition} state={getState(proposition)} correction={correction} />)
+                }
+            </div>
+            
             {
                 selected ? <p onClick={next}>Suivant</p> : null
             }
